@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Alumni Directory</title>
+
+    <!-- Add Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <!-- Add Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 h-20">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <!-- Logo and links -->
+          <div
+            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+          >
+            <div class="flex flex-shrink-0 items-center">
+              <img
+                class="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Alumni Directory"
+              />
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  >Dashboard</a
+                >
+                <a
+                  href="#"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Team</a
+                >
+                <a
+                  href="#"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Projects</a
+                >
+                <a
+                  href="#"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Calendar</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Search form -->
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+            <form action="/search" method="POST" class="flex items-center">
+              <input
+                type="text"
+                name="query"
+                placeholder="Search alumni by name"
+                class="p-2 rounded-md text-gray-900"
+                oninput="toggleSearchButton(this)"
+              />
+              <button
+                type="submit"
+                id="search-button"
+                class="ml-2 p-2 bg-indigo-500 text-white rounded-md"
+                disabled
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Fancy animated text section -->
+    <div class="text-center py-10">
+      <h1 class="text-white text-8xl font-bold bounce">
+        Hi, Welcome to the Alumni Page
+      </h1>
+      <p class="text-gray-300 mt-4 text-lg max-w-2xl mx-auto">
+        Discover and reconnect with alumni who have excelled in various
+        industries. Explore their profiles to learn more about their careers and
+        accomplishments.
+      </p>
+
+      <!-- Alumni Cards Grid -->
+      <div
+        id="alumni-container"
+        class="alumni-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 mx-4 my-6 p-4"
+      >
+        <!-- Alumni cards will be injected here by JavaScript -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination flex justify-center mt-6">
+        <button
+          onclick="changePage(1)"
+          class="mx-2 px-3 py-1 rounded bg-indigo-500 text-white"
+        >
+          1
+        </button>
+        <button
+          onclick="changePage(2)"
+          class="mx-2 px-3 py-1 rounded bg-gray-700 text-white hover:bg-indigo-500"
+        >
+          2
+        </button>
+        <button
+          onclick="changePage(3)"
+          class="mx-2 px-3 py-1 rounded bg-gray-700 text-white hover:bg-indigo-500"
+        >
+          3
+        </button>
+      </div>
+
+      <!-- Hidden container to show full information -->
+      <div id="details-container" style="display: none"></div>
+    </div>
+
+    <script>
+      function toggleSearchButton(input) {
+        const searchButton = document.getElementById("search-button");
+        searchButton.disabled = input.value.trim() === "";
+      }
+    </script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #840029 !important;
+  color: #333;
+  padding: 20px;
+}
+
+/* Page title */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: orange;
+  margin-bottom: 20px;
+}
+
+/* Card container */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Alumni List styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  line-height: 1.8; /* Increase line height for better spacing */
+}
+
+/* Line breaks and extra spacing */
+li div,
+li span,
+li a,
+li p {
+  margin-bottom: 10px; /* Add spacing between items */
+  display: block; /* Ensure items are on separate lines */
+}
+
+/* Alumni name */
+strong {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px; /* Add space after the name */
+}
+
+/* Icons */
+li i {
+  margin-right: 8px;
+  color: #4a90e2;
+  vertical-align: middle; /* Align icons with text */
+}
+
+/* Contact details and fields */
+li .contact-info {
+  margin-bottom: 10px; /* Space between each field */
+  display: block;
+}
+
+/* Contact section styling */
+.contact-section {
+  margin-top: 20px; /* Ensure consistent spacing with the card */
+  padding: 20px; /* Add padding if necessary */
+  background-color: #fff; /* Optional: add background for consistency */
+  border-radius: 10px; /* Optional: keep styling consistent */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: shadow for consistency */
+}
+
+/* Link styling */
+a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  li {
+    padding: 15px;
+  }
+
+  .contact-section {
+    margin-top: 15px; /* Adjust as needed for smaller screens */
+  }
+}
+.not-found {
+  font-size: 1.5rem;
+  color: darkgray; /* Make the text red to stand out */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}

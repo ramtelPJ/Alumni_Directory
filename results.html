@@ -1,0 +1,58 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style1.css') }}"
+  />
+  <title>Alumni Search Results</title>
+</head>
+
+<body>
+  <h1>Search Results</h1>
+
+  <!-- Check if there are alumni in the search results -->
+  {% if alumni %}
+  <div class="card">
+    <ul>
+      {% for alum in alumni %}
+      <li>
+        <!-- Display a random image for each alumni -->
+
+        <strong>{{ alum['full_name'] }}</strong><br />
+        <i class="fas fa-id-card"></i> User ID: {{ alum['user_id'] }} <br />
+
+        <!-- Contact section wrapped in a div -->
+        <div class="contact-section">
+          <i class="fas fa-envelope"></i> Email: {{ alum['email'] }} <br />
+          <i class="fas fa-briefcase"></i> {{ alum['job_title'] }} at {{
+          alum['name_of_business'] }}<br />
+          <i class="fas fa-map-marker-alt"></i> Address: {{
+          alum['business_address'] }}, {{ alum['business_city'] }}, {{
+          alum['business_state'] }}, {{ alum['business_zip'] }}<br />
+          <i class="fas fa-globe"></i> Click Here:
+          <a href="{{ alum['business_website'] }}">Website</a><br />
+
+          <i class="fas fa-phone"></i> Contact: {{ alum['business_email'] }}<br />
+          <i class="fas fa-phone"></i> Phone: {{ alum['business_phone'] }}<br />
+          <i class="fas fa-tags"></i> {{ alum['business_category'] }} - {{
+          alum['business_description'] }}<br />
+          <i class="fas fa-percent"></i> Discount: {{ alum['alumni_discount'] }}
+          - {{ alum['alumni_discount_description'] }}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% else %}
+  <!-- Display a message if no alumni are found -->
+  <p class="not-found">Sorry, no alumni were found matching your search.</p>
+  {% endif %}
+
+  <a href="/">🏠</a>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>

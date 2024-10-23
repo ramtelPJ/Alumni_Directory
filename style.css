@@ -1,0 +1,197 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #840029 !important;
+  color: #d4caca;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #c2c9cf;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #34495e;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  input[type="text"] {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.alumni-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+  gap: 20px;
+  padding: 20px;
+}
+
+.alumni-card {
+  background-color: #2d3748;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(223, 107, 107, 0.3),
+    0 6px 6px rgba(20, 207, 42, 0.2), 0 15px 30px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alumni-card:hover {
+  transform: translateY(-10px); /* Move the card upwards on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35), 0 8px 8px rgba(0, 0, 0, 0.25),
+    0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.alumni-card img {
+  border-radius: 50%; /* Circular image */
+  width: 100px; /* Fixed width */
+  height: 100px; /* Fixed height */
+  object-fit: cover; /* Image inside circular container */
+  margin-bottom: 15px;
+}
+
+.alumni-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ff6347; /* Orange-like text for the name */
+}
+
+.alumni-card p {
+  margin: 5px 0;
+  color: #a0aec0; /* Light gray text for description */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alumni-card .social-icons {
+  margin-top: 10px;
+}
+
+.alumni-card .social-icons a {
+  margin: 0 5px;
+  color: white;
+}
+
+.contact-info {
+  display: block;
+  margin-top: 10px;
+}
+
+.contact-info a {
+  color: white;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.contact-info a:hover {
+  color: #ff6347; /* Highlight color on hover */
+}
+
+#details-container {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: none; /* Hidden by default */
+}
+
+/* Typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is hidden initially */
+  border-right: 3px solid white; /* Cursor effect */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  width: 0; /* Set width to 0 for typing effect */
+  animation: typing 4s steps(40, end) 1s infinite,
+    /* Typing animation */ blink 0.75s step-end infinite; /* Cursor blink animation */
+  font-size: 2.5rem; /* Set desired font size */
+  color: white;
+}
+
+/* Font Awesome Icons */
+.contact-info a i {
+  margin-right: 5px; /* Space between icon and text */
+}
